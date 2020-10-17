@@ -17,7 +17,7 @@ text = '我是主修資料科學的學生'
 words = pseg.cut(text)
 [word for word in words]
 
-#標點符號的 flag == x ，如果要去除標點符號可以補上`flag in words if flag != 'x'`。
+標點符號的 flag == x ，如果要去除標點符號可以補上`flag in words if flag != 'x'`。
 ```
 
 ### Step 2.將文本轉成數字序列
