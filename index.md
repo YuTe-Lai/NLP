@@ -1,8 +1,29 @@
-## Welcome to GitHub Pages
+## 資料預處理：讓機器能夠吸收文字
 
-You can use the [editor on GitHub](https://github.com/YuTe-Lai/NLP/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### Step 1.文本斷詞（Text Segmentation）
+將文本切割成數個有意義的單位（Character、Word、Sentence），而切割完成後的每個文字片段習慣被稱為Token。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+．英文可以簡單地用空格斷詞：
+```markdown
+text = 'I am a student major in data science.'
+words = text.split(' ')
+```
+
+．中文則使用 Jieba 中文斷詞工具：
+```markdown
+import jieba.posseg as pseg
+
+text = '我是主修資料科學的學生'
+words = pseg.cut(text)
+[word for word in words]
+
+#標點符號的 flag == x ，如果要去除標點符號可以補上`flag in words if flag != 'x'`。
+```
+
+### Step 2.將文本轉成數字序列
+### Step 3.整合序列長度（Zero Padding）
+### Step 4.將正解做 One-hot Encoding
+
 
 ### Markdown
 
