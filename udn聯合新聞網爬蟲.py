@@ -85,8 +85,9 @@ def html_to_df(content):
             #print("url：" + s.get('href'))
             complete_url = 'https://udn.com'+s.get('href')
             url.append(complete_url)
-            #print(article_content(url))
-            contents.append(article_content(complete_url))
+            ccc = article_content(complete_url)
+            #print(ccc)
+            contents.append(ccc)
             
             
             
